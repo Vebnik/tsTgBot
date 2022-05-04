@@ -1,0 +1,23 @@
+{
+  "name": "tgsearchpicture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./source/startApp/mainApp.ts",
+  "module": "./source/startApp/mainApp.ts",
+  "scripts": {
+    "start": "node ./source/startApp/mainApp.js"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "NikEvs",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.7",
+    "telegraf": "^4.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
