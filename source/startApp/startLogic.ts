@@ -1,3 +1,5 @@
+import { commandList } from './nameSpace/commandList'
+import { commandEvent } from './commandLogic/commandHandler'
 
 export class StartLogic {
 
@@ -14,8 +16,8 @@ export class StartLogic {
 	}
 
 	public eventHandler(): void {
-		this.app.hears('test', (ctx: any): void => {
-			ctx.reply('Reply 🎧')
+		this.app.command(commandList, (ctx: any): void => {
+			commandEvent(ctx)
 		})
 	}
 
