@@ -1,23 +1,26 @@
 import * as tg from 'telegraf/types'
-import * as tt from 'telegraf/typings/telegram-types'
-import {Deunionize} from "telegraf/typings/deunionize";
+import {Deunionize} from "telegraf/typings/deunionize"
+import { commandList } from '../nameSpace/commandList'
+import {get, help} from './logic'
 
 const parsCommand = (text: string): string => {
-
-	return 'test'
+	return <string>commandList
+		.map(el => text.match(`${el}`))
+		.toString()
+		.replace(/[ ,]/gu, '')
 }
 
-export const commandEvent = (com: Deunionize<tg.Update>): void => {
-	const content: Deunionize<tg.Message> = com.message
+export const commandEvent = (ctx: Deunionize<tg.Update>): void => {
+	const content: Deunionize<tg.Message> = ctx.message
 
 	switch (parsCommand(content.text)) {
 
 		case 'get':
-
+			get(ctx)
 			break
 
 		case 'help':
-
+			help(ctx)
 			break
 	}
 }
