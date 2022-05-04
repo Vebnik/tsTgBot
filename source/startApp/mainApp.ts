@@ -8,4 +8,5 @@ const appLogic: any = new StartLogic(app)
 
 
 // Logic
+appLogic.eventHandler()
 appLogic.logIn()
