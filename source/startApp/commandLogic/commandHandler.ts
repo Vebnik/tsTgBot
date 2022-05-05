@@ -3,6 +3,7 @@ import {Deunionize} from "telegraf/typings/deunionize"
 import { commandList } from '../nameSpace/commandList'
 import {get, help} from './logic'
 
+
 const parsCommand = (text: string): string => {
 	return <string>commandList
 		.map(el => text.match(`${el}`))
@@ -16,7 +17,7 @@ export const commandEvent = (ctx: Deunionize<tg.Update>): void => {
 	switch (parsCommand(content.text)) {
 
 		case 'get':
-			get(ctx)
+			get(ctx, content.text)
 			break
 
 		case 'help':

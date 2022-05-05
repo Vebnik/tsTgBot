@@ -1,9 +1,11 @@
 import * as tg from 'telegraf/types'
-import {Deunionize} from "telegraf/typings/deunionize";
+import {Deunionize} from "telegraf/typings/deunionize"
+import { search } from '../../searchEngine/search'
 
 
-const get = (ctx: Deunionize<tg.Update>): void => {
-
+const get = (ctx: Deunionize<tg.Update>, content: string): void => {
+	const clearCont: string = content.replace(/\/get|\/get /g, '')
+	console.log(clearCont)
 }
 
 const help = (ctx: Deunionize<any>): void => {
