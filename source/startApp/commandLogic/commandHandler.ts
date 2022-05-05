@@ -2,7 +2,6 @@ import * as tg from 'telegraf/types'
 import {Deunionize} from "telegraf/typings/deunionize"
 import { commandList } from '../nameSpace/commandList'
 import {get, help} from './logic'
-import {Telegraf} from "telegraf";
 
 
 const parsCommand = (text: string): string => {
