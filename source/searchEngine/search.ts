@@ -1,13 +1,11 @@
 import { getPost } from './searchUtil'
 
 
-const search = (query: string): object => {
+const search = (query: string): Promise<object> => {
 
-	getPost(query).then(res => {
-		console.log(res)
-	})
+	const url: string = `https://www.deviantart.com/_napi/da-browse/api/networkbar/search/deviations?q=${query}`
 
-	return
+	return getPost(url)
 }
 
 

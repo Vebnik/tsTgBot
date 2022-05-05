@@ -17,7 +17,7 @@ export class StartLogic {
 
 	public eventHandler(): void {
 		this.app.command(commandList, (ctx: any): void => {
-			commandEvent(ctx)
+			commandEvent(ctx, this.app)
 		})
 	}
 
